@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Images",
+            "name": "SpikingVideo",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/home/melassal/Workspace/CSNN _2./csnn-simulator-build/Images",
+            "program": "/home/zhang/S2/RP/csnn-simulator-build/SpikingVideo",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "/home/melassal/Workspace/CSNN _2./csnn-simulator-build/",
+            "cwd": "/home/zhang/S2/RP/csnn-simulator-build/",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
