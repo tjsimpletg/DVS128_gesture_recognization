@@ -416,21 +416,21 @@ def create_data_set_frames(npy_dir: str):
 
 
 
-#classify_aedat_to_npz(dvs_path,events_dvs_split_path)
+classify_aedat_to_npz(dvs_path,events_dvs_split_path)
 
 train_data,train_label,test_data,test_label = create_data_set_events(events_dvs_split_path)
 
-#os.mkdir(os.path.join(frames_dvs_split_path,"split_by_number"))
-#os.mkdir(os.path.join(frames_dvs_split_path,"split_by_time"))
-#os.mkdir(os.path.join(frames_dvs_split_path,"split_by_fixed_duration"))
+os.mkdir(os.path.join(frames_dvs_split_path,"split_by_number"))
+os.mkdir(os.path.join(frames_dvs_split_path,"split_by_time"))
+os.mkdir(os.path.join(frames_dvs_split_path,"split_by_fixed_duration"))
 
-#create_same_directory_structure(events_dvs_split_path, os.path.join(frames_dvs_split_path,"split_by_number"))
-#create_same_directory_structure(events_dvs_split_path, os.path.join(frames_dvs_split_path,"split_by_time"))
-#create_same_directory_structure(events_dvs_split_path, os.path.join(frames_dvs_split_path,"split_by_fixed_duration"))
+create_same_directory_structure(events_dvs_split_path, os.path.join(frames_dvs_split_path,"split_by_number"))
+create_same_directory_structure(events_dvs_split_path, os.path.join(frames_dvs_split_path,"split_by_time"))
+create_same_directory_structure(events_dvs_split_path, os.path.join(frames_dvs_split_path,"split_by_fixed_duration"))
 
 
-#save_events_data_to_frame_npz_by_fixed_frames_number(train_data,train_label,test_data,test_label,frames_dvs_split_path,"number",20,128,128)
-#save_events_data_to_frame_npz_by_fixed_frames_number(train_data,train_label,test_data,test_label,frames_dvs_split_path,"time",20,128,128)
+save_events_data_to_frame_npz_by_fixed_frames_number(train_data,train_label,test_data,test_label,frames_dvs_split_path,"number",20,128,128)
+save_events_data_to_frame_npz_by_fixed_frames_number(train_data,train_label,test_data,test_label,frames_dvs_split_path,"time",20,128,128)
 save_events_data_to_frame_npy_by_fixed_time_duration(train_data,train_label,test_data,test_label,frames_dvs_split_path,500000,128,128)
 
 
