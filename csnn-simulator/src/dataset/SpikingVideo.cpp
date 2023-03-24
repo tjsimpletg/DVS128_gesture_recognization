@@ -37,7 +37,7 @@ std::pair<std::string, Tensor<InputType>> SpikingVideo::next()
 		        {
 			        float pixel;
 			
-			        out.second.at(i, j, y, x) = static_cast<InputType>(pixel);
+			        out.second.at(y,x,j,i) = static_cast<InputType>(pixel);
 		        }
 	        }
         }
@@ -46,7 +46,7 @@ std::pair<std::string, Tensor<InputType>> SpikingVideo::next()
 	// Tensor<float>::draw_Mnist_tensor("/home/melassal/Workspace/Draw/Mnist/Raw_" + std::to_string(label) + "_" + std::to_string(_cursor) + "_", out.second);
 
 	_cursor+=_all_shape[1]*_all_shape[2]*_all_shape[3]*_all_shape[4];
-    _label_cursor++;
+    	_label_cursor++;
 	return out;
 }
 
@@ -60,6 +60,7 @@ size_t SpikingVideo::size() const
 void SpikingVideo::reset()
 {
 	_cursor = 0;
+	_label_cursor=0;
 }
 
 const Shape &SpikingVideo::shape() const
