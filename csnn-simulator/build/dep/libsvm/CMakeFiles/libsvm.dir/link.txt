@@ -1,0 +1,1 @@
+/usr/local/gcc-9.5.0/bin/g++ -fPIC -g -DDEBUG -shared -Wl,-soname,liblibsvm.so -o liblibsvm.so CMakeFiles/libsvm.dir/svm.cpp.o 

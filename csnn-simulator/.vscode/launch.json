@@ -1,0 +1,50 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Images",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/melassal/Workspace/CSNN _2./csnn-simulator-build/Images",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "/home/melassal/Workspace/CSNN _2./csnn-simulator-build/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Activer l'impression en mode Pretty pour gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ générer le fichier actif",
+            "miDebuggerPath": "/usr/bin/gdb"
+        },
+        {
+            "name": "Video",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/home/melassal/Workspace/CSNN/csnn-simulator-build/Video",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "/home/melassal/Workspace/CSNN/csnn-simulator-build/",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Activer l'impression en mode Pretty pour gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "C/C++: g++ générer le fichier actif",
+            "miDebuggerPath": "/usr/bin/gdb"
+        }
+    ]
+}

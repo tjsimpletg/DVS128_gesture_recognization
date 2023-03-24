@@ -1,0 +1,115 @@
+{
+	"kind" : "toolchains",
+	"toolchains" : 
+	[
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/usr/local/gcc-9.5.0/lib/gcc/x86_64-pc-linux-gnu/9.5.0/include",
+						"/usr/local/include",
+						"/usr/local/gcc-9.5.0/include",
+						"/usr/local/gcc-9.5.0/lib/gcc/x86_64-pc-linux-gnu/9.5.0/include-fixed",
+						"/usr/include/x86_64-linux-gnu",
+						"/usr/include"
+					],
+					"linkDirectories" : 
+					[
+						"/usr/local/gcc-9.5.0/lib/gcc/x86_64-pc-linux-gnu/9.5.0",
+						"/usr/local/gcc-9.5.0/lib64",
+						"/lib/x86_64-linux-gnu",
+						"/lib64",
+						"/usr/lib/x86_64-linux-gnu",
+						"/usr/lib64",
+						"/usr/local/gcc-9.5.0/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"gcc",
+						"gcc_s",
+						"c",
+						"gcc",
+						"gcc_s"
+					]
+				},
+				"path" : "/usr/local/gcc-9.5.0/bin/gcc",
+				"version" : "9.5.0"
+			},
+			"language" : "C",
+			"sourceFileExtensions" : 
+			[
+				"c",
+				"m"
+			]
+		},
+		{
+			"compiler" : 
+			{
+				"id" : "GNU",
+				"implicit" : 
+				{
+					"includeDirectories" : 
+					[
+						"/usr/local/gcc-9.5.0/include/c++/9.5.0",
+						"/usr/local/gcc-9.5.0/include/c++/9.5.0/x86_64-pc-linux-gnu",
+						"/usr/local/gcc-9.5.0/include/c++/9.5.0/backward",
+						"/usr/local/gcc-9.5.0/lib/gcc/x86_64-pc-linux-gnu/9.5.0/include",
+						"/usr/local/include",
+						"/usr/local/gcc-9.5.0/include",
+						"/usr/local/gcc-9.5.0/lib/gcc/x86_64-pc-linux-gnu/9.5.0/include-fixed",
+						"/usr/include/x86_64-linux-gnu",
+						"/usr/include"
+					],
+					"linkDirectories" : 
+					[
+						"/usr/local/gcc-9.5.0/lib/gcc/x86_64-pc-linux-gnu/9.5.0",
+						"/usr/local/gcc-9.5.0/lib64",
+						"/lib/x86_64-linux-gnu",
+						"/lib64",
+						"/usr/lib/x86_64-linux-gnu",
+						"/usr/lib64",
+						"/usr/local/gcc-9.5.0/lib"
+					],
+					"linkFrameworkDirectories" : [],
+					"linkLibraries" : 
+					[
+						"stdc++",
+						"m",
+						"gcc_s",
+						"gcc",
+						"c",
+						"gcc_s",
+						"gcc"
+					]
+				},
+				"path" : "/usr/local/gcc-9.5.0/bin/g++",
+				"version" : "9.5.0"
+			},
+			"language" : "CXX",
+			"sourceFileExtensions" : 
+			[
+				"C",
+				"M",
+				"c++",
+				"cc",
+				"cpp",
+				"cxx",
+				"mm",
+				"mpp",
+				"CPP",
+				"ixx",
+				"cppm"
+			]
+		}
+	],
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

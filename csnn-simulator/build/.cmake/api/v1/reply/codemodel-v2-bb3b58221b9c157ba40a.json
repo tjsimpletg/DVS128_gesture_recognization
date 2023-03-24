@@ -1,0 +1,106 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				},
+				{
+					"build" : "dep/libsvm",
+					"jsonFile" : "directory-dep.libsvm-Debug-db1322bbcbdf5694cb59.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "dep/libsvm",
+					"targetIndexes" : 
+					[
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "FalezCSNNSimulator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CSNNS::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CSNNS-Debug-579f9ca1de1e32cd90bd.json",
+					"name" : "CSNNS",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SpikingVideo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SpikingVideo-Debug-faf712cbf307d28b7597.json",
+					"name" : "SpikingVideo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Video::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Video-Debug-024549cb5556ca2c4d7e.json",
+					"name" : "Video",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "libsvm::@79f003328db4a12f62e0",
+					"jsonFile" : "target-libsvm-Debug-9e15f5a3d9549b73d91f.json",
+					"name" : "libsvm",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/zhang/S2/RP/csnn-simulator/build",
+		"source" : "/home/zhang/S2/RP/csnn-simulator"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
