@@ -135,6 +135,7 @@ int main(int argc, char **argv)
 
 		experiment.run(10000);
 	//}
+	return 0;
 }
 
 // experiment.push<process::ResizeInput>(experiment.name(), _frame_size_width, _frame_size_height);

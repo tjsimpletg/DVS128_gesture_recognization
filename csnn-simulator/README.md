@@ -22,13 +22,10 @@ Provide implementation of experiments described in:
 
 ## Installation
 
-```bash
-mkdir csnn-simulator-build
-cd csnn-simulator-build
-#cmake ../csnn-simulator -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
-cmake ../csnn-simulator -DCMAKE_CXX_COMPILER=/usr/local/gcc-9.5.0/bin/g++  -DCMAKE_C_COMPILER=/usr/local/gcc-9.5.0/bin/gcc
-make
-```
+    mkdir csnn-simulator-build
+    cd csnn-simulator-build
+    cmake ../csnn-simulator -G"Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+    make
 
 ## Usage
 

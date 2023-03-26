@@ -1114,7 +1114,7 @@ public:
 			{
 				for (size_t i = 0; i < _height; i++)
 					for (size_t j = 0; j < _width; j++)
-						frame.at<float>(i, j) = in.at(i, j, k, conv)*255;
+						frame.at<float>(i, j) = in.at(i, j, k, conv);
 
 				imwrite(draw_folder_path + std::to_string(k) + ".png", frame);
 			}
