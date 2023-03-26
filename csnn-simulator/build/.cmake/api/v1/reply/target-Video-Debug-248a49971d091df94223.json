@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "SpikingVideo"
+			"path" : "Video"
 		}
 	],
 	"backtrace" : 1,
@@ -101,14 +101,14 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "CSNNS::@6890427a1f51a3e7e1df"
+			"id" : "libsvm::@79f003328db4a12f62e0"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "libsvm::@79f003328db4a12f62e0"
+			"id" : "CSNNS::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "SpikingVideo::@6890427a1f51a3e7e1df",
+	"id" : "Video::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -355,8 +355,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "SpikingVideo",
-	"nameOnDisk" : "SpikingVideo",
+	"name" : "Video",
+	"nameOnDisk" : "Video",
 	"paths" : 
 	{
 		"build" : ".",
@@ -377,7 +377,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "apps/SpikingVideo.cpp",
+			"path" : "apps/Video.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

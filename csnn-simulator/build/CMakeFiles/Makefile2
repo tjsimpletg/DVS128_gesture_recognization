@@ -125,8 +125,8 @@ CMakeFiles/CSNNS.dir/clean:
 # Target rules for target CMakeFiles/SpikingVideo.dir
 
 # All Build rule for target.
-CMakeFiles/SpikingVideo.dir/all: CMakeFiles/CSNNS.dir/all
 CMakeFiles/SpikingVideo.dir/all: dep/libsvm/CMakeFiles/libsvm.dir/all
+CMakeFiles/SpikingVideo.dir/all: CMakeFiles/CSNNS.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpikingVideo.dir/build.make CMakeFiles/SpikingVideo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/SpikingVideo.dir/build.make CMakeFiles/SpikingVideo.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhang/S2/RP/csnn-simulator/build/CMakeFiles --progress-num=92,93 "Built target SpikingVideo"
@@ -152,8 +152,8 @@ CMakeFiles/SpikingVideo.dir/clean:
 # Target rules for target CMakeFiles/Video.dir
 
 # All Build rule for target.
-CMakeFiles/Video.dir/all: CMakeFiles/CSNNS.dir/all
 CMakeFiles/Video.dir/all: dep/libsvm/CMakeFiles/libsvm.dir/all
+CMakeFiles/Video.dir/all: CMakeFiles/CSNNS.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Video.dir/build.make CMakeFiles/Video.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Video.dir/build.make CMakeFiles/Video.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhang/S2/RP/csnn-simulator/build/CMakeFiles --progress-num=94,95 "Built target Video"
