@@ -1,5 +1,5 @@
-project(FalezCSNNSimulator)
 cmake_minimum_required(VERSION 3.1)
+project(FalezCSNNSimulator)
 
 option(USE_GUI "Enable GUI" OFF)
 # option(USE_GUI "Enable GUI" ON)
