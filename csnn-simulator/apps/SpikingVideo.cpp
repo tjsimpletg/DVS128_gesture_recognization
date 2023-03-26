@@ -41,8 +41,8 @@
  */
 int main(int argc, char **argv)
 {
-	for (int _repeat = 1; _repeat < 4; _repeat++)
-	{
+	//for (int _repeat = 1; _repeat < 4; _repeat++)
+	//{
 		std::string _dataset = "DVS_128_S";
 
 		Experiment<SparseIntermediateExecutionNew> experiment(argc, argv, _dataset, false, false);
@@ -55,8 +55,8 @@ int main(int argc, char **argv)
 		//size_t _frame_gap = 2, _grey = 1, _draw = 0, _th_mv = 0;
 		// filter sizes
 		size_t filter_size = 5, tmp_filter_size = 1, temp_stride = 2, tmp_pooling_size = 1; // tmp_filter_size == 2 ? 2 : 1;
-		size_t filter_number = 64;
-		size_t sampling_size = 655; //(_frame_size_height * _frame_size_width) / (filter_size * filter_size);
+		//size_t filter_number = 64;
+		//size_t sampling_size = 655; //(_frame_size_height * _frame_size_width) / (filter_size * filter_size);
 
 		experiment.push<process::MaxScaling>(); 
 		experiment.push<process::DefaultOnOffFilter>(7, 1.0, 4.0); 
@@ -84,11 +84,11 @@ int main(int argc, char **argv)
 		auto &conv1 = experiment.push<layer::Convolution3D>(7, 7, tmp_filter_size, 8, "", 1, 1, temp_stride);
 		conv1.set_name("conv1"); 
 		conv1.parameter<bool>("draw").set(false);
-		conv1.parameter<bool>("save_weights").set(true);
-		conv1.parameter<bool>("save_random_start").set(true);
+		conv1.parameter<bool>("save_weights").set(false);
+		conv1.parameter<bool>("save_random_start").set(false);
 		conv1.parameter<bool>("log_spiking_neuron").set(false);
 		conv1.parameter<bool>("inhibition").set(true);
-		conv1.parameter<uint32_t>("epoch").set(sampling_size);
+		conv1.parameter<uint32_t>("epoch").set(100);
 		conv1.parameter<float>("annealing").set(0.95f);
 		conv1.parameter<float>("min_th").set(1.0f);
 		conv1.parameter<float>("t_obj").set(t_obj);
@@ -103,11 +103,11 @@ int main(int argc, char **argv)
 		auto &conv2 = experiment.push<layer::Convolution3D>(5, 5, tmp_filter_size, 9, "", 1, 1, temp_stride);
 		conv2.set_name("conv2"); 
 		conv2.parameter<bool>("draw").set(false);
-		conv2.parameter<bool>("save_weights").set(true);
-		conv2.parameter<bool>("save_random_start").set(true);
+		conv2.parameter<bool>("save_weights").set(false);
+		conv2.parameter<bool>("save_random_start").set(false);
 		conv2.parameter<bool>("log_spiking_neuron").set(false);
 		conv2.parameter<bool>("inhibition").set(true);
-		conv2.parameter<uint32_t>("epoch").set(sampling_size);
+		conv2.parameter<uint32_t>("epoch").set(100);
 		conv2.parameter<float>("annealing").set(0.95f);
 		conv2.parameter<float>("min_th").set(1.0f);
 		conv2.parameter<float>("t_obj").set(t_obj1);
@@ -134,7 +134,7 @@ int main(int argc, char **argv)
 		conv2_out.add_analysis<analysis::Svm>();
 
 		experiment.run(10000);
-	}
+	//}
 }
 
 // experiment.push<process::ResizeInput>(experiment.name(), _frame_size_width, _frame_size_height);
