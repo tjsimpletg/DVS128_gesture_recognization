@@ -459,5 +459,3 @@ np.save(os.path.join(save_path,"train_data_frames_time"),np.float32(train_data_f
 np.save(os.path.join(save_path,"train_label_frames_time"),np.float32(train_label_frames))
 np.save(os.path.join(save_path,"test_data_frames_time"),np.float32(test_data_frames))
 np.save(os.path.join(save_path,"test_label_frames_time"),np.float32(test_label_frames))
-
-
