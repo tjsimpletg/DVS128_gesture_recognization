@@ -54,8 +54,8 @@ int main(int argc, char **argv)
 		// number of frames to skip, this speeds up the action.
 		//size_t _frame_gap = 2, _grey = 1, _draw = 0, _th_mv = 0;
 		// filter sizes
-		size_t filter_size = 5, tmp_filter_size = 1, temp_stride = 1, tmp_pooling_size = 1; // tmp_filter_size == 2 ? 2 : 1;
-		size_t filter_number = 6;
+		size_t filter_size = 5, tmp_filter_size = 1, temp_stride = 2, tmp_pooling_size = 1; // tmp_filter_size == 2 ? 2 : 1;
+		size_t filter_number = 64;
 		size_t sampling_size = 655; //(_frame_size_height * _frame_size_width) / (filter_size * filter_size);
 
 		experiment.push<process::MaxScaling>(); 
@@ -71,8 +71,8 @@ int main(int argc, char **argv)
 		experiment.push<LatencyCoding>();
 
 		// The location of the dataset Videos, seperated into train and test folders that contain labeled folders of videos.
-		experiment.add_train<dataset::SpikingVideo>("/home/zhang/S2/RP/DataSet/DVS_npz_frames/split_by_fixed_duration/train_data_frames_fixed_duration.npy", "/home/zhang/S2/RP/DataSet/DVS_npz_frames/split_by_fixed_duration/train_label_frames_fixed_duration.npy");
-		experiment.add_test<dataset::SpikingVideo>("/home/zhang/S2/RP/DataSet/DVS_npz_frames/split_by_fixed_duration/test_data_frames_fixed_duration.npy", "/home/zhang/S2/RP/DataSet/DVS_npz_frames/split_by_fixed_duration/test_label_frames_fixed_duration.npy");
+		experiment.add_train<dataset::SpikingVideo>("/home/zhang/S2/RP/DataSet/npyFinalDataset/train_data_frames_number.npy", "/home/zhang/S2/RP/DataSet/npyFinalDataset/train_label_frames_number.npy");
+		experiment.add_test<dataset::SpikingVideo>("/home/zhang/S2/RP/DataSet/npyFinalDataset/test_data_frames_number.npy","/home/zhang/S2/RP/DataSet/npyFinalDataset/test_label_frames_number.npy");
 
 		float t_obj = 0.75;
 		float t_obj1 = 0.75;
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 		conv2.parameter<STDP>("stdp").set<stdp::Biological>(w_lr, 0.1f);
 
 		auto &conv1_out = experiment.output<TimeObjectiveOutput>(conv1, t_obj);
-		conv1_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv1.name());
+		//conv1_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv1.name());
 		conv1_out.add_postprocessing<process::SumPooling>(20, 20);
 		conv1_out.add_postprocessing<process::FeatureScaling>();
 		conv1_out.add_analysis<analysis::Activity>();
@@ -125,7 +125,7 @@ int main(int argc, char **argv)
 		conv1_out.add_analysis<analysis::Svm>();
 
 		auto &conv2_out = experiment.output<TimeObjectiveOutput>(conv2, t_obj1);
-		conv2_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv2.name());
+		//conv2_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv2.name());
 		conv2_out.add_postprocessing<process::SumPooling>(20, 20);
 		// conv2_out.add_postprocessing<process::ResidualConnection>(experiment.name(), "");
 		conv2_out.add_postprocessing<process::FeatureScaling>();

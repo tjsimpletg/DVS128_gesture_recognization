@@ -15,7 +15,7 @@
 
 #define FRAME_WIDTH 128
 #define FRAME_HEIGHT 128
-#define FRAME_NUMBER 37
+#define FRAME_NUMBER 20
 #define VIDEO_DEPTH 2
 #define CONV_DEPTH 1
 
@@ -47,10 +47,9 @@ namespace dataset {
 		Shape _shape;
 		std::vector<float> _data;
 		std::vector<float> _label;
-		std::vector<unsigned long> _all_shape;
-		bool const _is_fortran{false};
-		void LoadNpy(std::string &npy_file_path,std::vector<float> &_data, std::vector<unsigned long> &shape);
-
+		std::vector<unsigned long> _data_shape;
+		std::vector<unsigned long> _label_shape;
+		bool _is_fortran{false};
 	};
 
 }
