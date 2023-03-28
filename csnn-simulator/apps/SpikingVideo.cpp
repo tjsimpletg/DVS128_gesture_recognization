@@ -43,7 +43,7 @@ int main(int argc, char **argv)
 {
 	//for (int _repeat = 1; _repeat < 4; _repeat++)
 	//{
-		std::string _dataset = "DVS_128_S";
+		std::string _dataset = "DVS_128";
 
 		Experiment<SparseIntermediateExecutionNew> experiment(argc, argv, _dataset, false, false);
 
@@ -71,8 +71,8 @@ int main(int argc, char **argv)
 		experiment.push<LatencyCoding>();
 
 		// The location of the dataset Videos, seperated into train and test folders that contain labeled folders of videos.
-		experiment.add_train<dataset::SpikingVideo>("/home/zhang/S2/RP/DataSet/npyFinalDataset/train_data_frames_number.npy", "/home/zhang/S2/RP/DataSet/npyFinalDataset/train_label_frames_number.npy");
-		experiment.add_test<dataset::SpikingVideo>("/home/zhang/S2/RP/DataSet/npyFinalDataset/test_data_frames_number.npy","/home/zhang/S2/RP/DataSet/npyFinalDataset/test_label_frames_number.npy");
+		experiment.add_train<dataset::SpikingVideo>("/home/ubuntu/npySaufDuration/train_data_frames_number.npy", "/home/ubuntu/npySaufDuration/train_label_frames_number.npy");
+		experiment.add_test<dataset::SpikingVideo>("/home/ubuntu/npySaufDuration/test_data_frames_number.npy","/home/ubuntu/npySaufDuration/test_label_frames_number.npy");
 
 		float t_obj = 0.75;
 		float t_obj1 = 0.75;
