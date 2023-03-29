@@ -61,18 +61,32 @@ int main(int argc, char **argv)
 		experiment.push<process::MaxScaling>(); 
 		experiment.push<process::DefaultOnOffFilter>(7, 1.0, 4.0); 
 
-		//const char *input_path_ptr = std::getenv("INPUT_PATH");
+		const char *input_path_ptr = std::getenv("INPUT_INDEX");
 
-		//if (input_path_ptr == nullptr)
-		//	throw std::runtime_error("Require to define INPUT_PATH variable");
-
-		//std::string input_path(input_path_ptr);
+		//std::string input_index(input_path_ptr);
 
 		experiment.push<LatencyCoding>();
 
 		// The location of the dataset Videos, seperated into train and test folders that contain labeled folders of videos.
-		experiment.add_train<dataset::SpikingVideo>("/home/ubuntu/npySaufDuration/train_data_frames_number.npy", "/home/ubuntu/npySaufDuration/train_label_frames_number.npy");
-		experiment.add_test<dataset::SpikingVideo>("/home/ubuntu/npySaufDuration/test_data_frames_number.npy","/home/ubuntu/npySaufDuration/test_label_frames_number.npy");
+		if (input_path_ptr == nullptr)
+			throw std::runtime_error("Require to define INPUT_INDEX 1,2 or 3 variable");
+		else if (strcmp(input_path_ptr, "1")==0)
+		{	
+			experiment.add_train<dataset::SpikingVideo>("/home/gzhang/npydataset/train_data_frames_number.npy","/home/gzhang/npydataset/train_label_frames_number.npy");
+			experiment.add_test<dataset::SpikingVideo>("/home/gzhang/npydataset/test_data_frames_number.npy","/home/gzhang/npydataset/test_label_frames_number.npy");
+		}
+		else if (strcmp(input_path_ptr, "2")==0)
+		{
+			experiment.add_train<dataset::SpikingVideo>("/home/gzhang/npydataset/train_data_frames_time.npy","/home/gzhang/npydataset/train_label_frames_time.npy");
+			experiment.add_test<dataset::SpikingVideo>("/home/gzhang/npydataset/test_data_frames_time.npy","/home/gzhang/npydataset/test_label_frames_time.npy");
+		}
+		else if (strcmp(input_path_ptr, "3")==0)
+		{
+			experiment.add_train<dataset::SpikingVideo>("/home/gzhang/npydataset/train_data_frames_fixed_duration.npy","/home/gzhang/npydataset/train_label_frames_fixed_duration.npy");
+			experiment.add_test<dataset::SpikingVideo>("/home/gzhang/npydataset/test_data_frames_fixed_duration.npy","/home/gzhang/npydataset/test_label_frames_fixed_duration.npy");
+		}
+		else
+			throw std::runtime_error("INPUT_INDEX faulte");
 
 		float t_obj = 0.75;
 		float t_obj1 = 0.75;
