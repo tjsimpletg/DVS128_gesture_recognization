@@ -44,6 +44,7 @@ int main(int argc, char **argv)
 	//for (int _repeat = 1; _repeat < 4; _repeat++)
 	//{
 		std::string _dataset = "DVS_128";
+		const char *input_path_ptr = std::getenv("INPUT_INDEX");
 
 		Experiment<SparseIntermediateExecutionNew> experiment(argc, argv, _dataset, false, false);
 
@@ -61,7 +62,6 @@ int main(int argc, char **argv)
 		experiment.push<process::MaxScaling>(); 
 		experiment.push<process::DefaultOnOffFilter>(7, 1.0, 4.0); 
 
-		const char *input_path_ptr = std::getenv("INPUT_INDEX");
 
 		//std::string input_index(input_path_ptr);
 
