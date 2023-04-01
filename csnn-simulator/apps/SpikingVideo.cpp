@@ -60,12 +60,12 @@ int main(int argc, char **argv)
 		//size_t sampling_size = 655; //(_frame_size_height * _frame_size_width) / (filter_size * filter_size);
 
 		experiment.push<process::MaxScaling>(); 
-		experiment.push<process::DefaultOnOffFilter>(7, 1.0, 4.0); 
+		//experiment.push<process::DefaultOnOffFilter>(7, 1.0, 4.0); 
 
 
 		//std::string input_index(input_path_ptr);
 
-		experiment.push<LatencyCoding>();
+		//experiment.push<LatencyCoding>();
 
 		// The location of the dataset Videos, seperated into train and test folders that contain labeled folders of videos.
 		if (input_path_ptr == nullptr)
@@ -98,7 +98,7 @@ int main(int argc, char **argv)
 		auto &conv1 = experiment.push<layer::Convolution3D>(7, 7, tmp_filter_size, 8, "", 1, 1, temp_stride);
 		conv1.set_name("conv1"); 
 		conv1.parameter<bool>("draw").set(false);
-		conv1.parameter<bool>("save_weights").set(false);
+		conv1.parameter<bool>("save_weights").set(true);
 		conv1.parameter<bool>("save_random_start").set(false);
 		conv1.parameter<bool>("log_spiking_neuron").set(false);
 		conv1.parameter<bool>("inhibition").set(true);
@@ -117,7 +117,7 @@ int main(int argc, char **argv)
 		auto &conv2 = experiment.push<layer::Convolution3D>(5, 5, tmp_filter_size, 9, "", 1, 1, temp_stride);
 		conv2.set_name("conv2"); 
 		conv2.parameter<bool>("draw").set(false);
-		conv2.parameter<bool>("save_weights").set(false);
+		conv2.parameter<bool>("save_weights").set(true);
 		conv2.parameter<bool>("save_random_start").set(false);
 		conv2.parameter<bool>("log_spiking_neuron").set(false);
 		conv2.parameter<bool>("inhibition").set(true);
@@ -131,7 +131,7 @@ int main(int argc, char **argv)
 		conv2.parameter<STDP>("stdp").set<stdp::Biological>(w_lr, 0.1f);
 
 		auto &conv1_out = experiment.output<TimeObjectiveOutput>(conv1, t_obj);
-		//conv1_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv1.name());
+		conv1_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv1.name());
 		conv1_out.add_postprocessing<process::SumPooling>(20, 20);
 		conv1_out.add_postprocessing<process::FeatureScaling>();
 		conv1_out.add_analysis<analysis::Activity>();
@@ -139,7 +139,7 @@ int main(int argc, char **argv)
 		conv1_out.add_analysis<analysis::Svm>();
 
 		auto &conv2_out = experiment.output<TimeObjectiveOutput>(conv2, t_obj1);
-		//conv2_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv2.name());
+		conv2_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv2.name());
 		conv2_out.add_postprocessing<process::SumPooling>(20, 20);
 		// conv2_out.add_postprocessing<process::ResidualConnection>(experiment.name(), "");
 		conv2_out.add_postprocessing<process::FeatureScaling>();
