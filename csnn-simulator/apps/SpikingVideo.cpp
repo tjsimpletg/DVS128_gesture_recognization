@@ -113,7 +113,7 @@ int main(int argc, char **argv)
 
 		auto &pool1 = experiment.push<layer::Pooling3D>(2, 2, tmp_pooling_size, 2, 2);
 		pool1.set_name("pool1"); 
-
+/*
 		auto &conv2 = experiment.push<layer::Convolution3D>(5, 5, tmp_filter_size, 9, "", 1, 1, temp_stride);
 		conv2.set_name("conv2"); 
 		conv2.parameter<bool>("draw").set(false);
@@ -129,7 +129,7 @@ int main(int argc, char **argv)
 		conv2.parameter<Tensor<float>>("w").distribution<distribution::Uniform>(0.0, 1.0);
 		conv2.parameter<Tensor<float>>("th").distribution<distribution::Gaussian>(10.0, 0.1);
 		conv2.parameter<STDP>("stdp").set<stdp::Biological>(w_lr, 0.1f);
-
+*/
 		auto &conv1_out = experiment.output<TimeObjectiveOutput>(conv1, t_obj);
 		conv1_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv1.name());
 		conv1_out.add_postprocessing<process::SumPooling>(20, 20);
@@ -137,7 +137,7 @@ int main(int argc, char **argv)
 		conv1_out.add_analysis<analysis::Activity>();
 		conv1_out.add_analysis<analysis::Coherence>();
 		conv1_out.add_analysis<analysis::Svm>();
-
+/*
 		auto &conv2_out = experiment.output<TimeObjectiveOutput>(conv2, t_obj1);
 		conv2_out.add_postprocessing<process::SaveFeatures>(experiment.name(), conv2.name());
 		conv2_out.add_postprocessing<process::SumPooling>(20, 20);
@@ -146,7 +146,7 @@ int main(int argc, char **argv)
 		conv2_out.add_analysis<analysis::Activity>();
 		conv2_out.add_analysis<analysis::Coherence>();
 		conv2_out.add_analysis<analysis::Svm>();
-
+*/
 		experiment.run(10000);
 	//}
 	return 0;
